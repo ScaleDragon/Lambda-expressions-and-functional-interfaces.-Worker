@@ -1,3 +1,4 @@
+package HomeWork.Lambda_Expressions_and_Functional_Interfaces.Worker;
 
 public class Worker {
 
@@ -15,15 +16,14 @@ public class Worker {
     public void start() {
         for (int i = 0; i < 100; i++) {
             if (i == 33) {
-                OnTaskErrorListener listenerError=System.out::println;
-                Worker worker= new Worker(listenerError);
+                OnTaskErrorListener listenerError = System.out::println;
+                Worker worker = new Worker(listenerError);
                 worker.errorCallback.onError("Error.Task " + i + " is not done");
             } else {
                 callback.onDone("Task " + i + " is done");
             }
         }
     }
-
 
     @FunctionalInterface
     public interface OnTaskDoneListener {
@@ -33,5 +33,4 @@ public class Worker {
     public interface OnTaskErrorListener {
         void onError(String result);
     }
-
 }
