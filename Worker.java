@@ -1,4 +1,3 @@
-package HomeWork.Lambda_Expressions_and_Functional_Interfaces.Worker;
 
 public class Worker {
 
